@@ -1,0 +1,6 @@
+﻿/* Profile Completion Box */
+.profileCompletionBx{ margin:0 0 10px 0; padding:10px; background:#fff; border:1px solid #000;}
+.profileCompletionBxTop{}
+.progressBarWrapper{ height:20px; width:33%; border:3px solid #000; }
+.progressBarInner{ height:100%; background:#76EE00; }
+.profileCompletionBxTips{ padding:10px; background:#fff; } 

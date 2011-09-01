@@ -14,6 +14,21 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+        LoadProfileStats();
     }
+    private void LoadProfileStats()
+    {
+
+        int complete = 27;
+        divPerCentComplete.Text = complete + "% profile completeness";
+        divProgressBarInner.Style.Add("width", complete.ToString() + "%");
+        string text = "<br>";
+
+        for (int i = 0; i < 5; i++)
+        {
+            text += @"<li><a href=http://www.google.com/> " + i + "</a> (+" + i + "%" + ")</li>";
+        }
+        fullList.Text = text;
+
+    } 
 }
