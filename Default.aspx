@@ -1,14 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="Default.aspx.cs" Inherits="_Default" %>
 <link rel="stylesheet" type="text/css" href="TestCss.css" />
- <script type="text/javascript" src="jquery.js"></script>          
- <script type="text/javascript">                                         
-   // we will add our javascript code here
-    $(document).ready(function() {
-   $("a").click(function() {
-     alert("Hello world!");
-   });
- });                                     
- </script>  
+ <script type="text/javascript" src="jquery.js"></script>
+ 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -28,10 +21,28 @@
             <h2>Profile Completion Tips <span>(<a href="">Why do this?</a>)</span></h2>
             <ul <asp:Literal runat="server" ID="fullList"/></ul>
             </div>
+        </div>
+        <div class="formBxRow">
+            <asp:Label ID="lblCompanyDirectors" runat="server" AssociatedControlID="txtCompanyDirectors" Text="Company Directors" />
+            <asp:TextBox ID="txtCompanyDirectors" runat="server" MaxLength="200" />
+            <div class="msg"></div>
+            <div class="info">The directors of the company please</div>
+            <div class="vSpace1">&nbsp;</div>
         </div>    
         </div>
     </form>
 </body>
+ 
+ <script type="text/javascript">  
+    $(document).ready(function() 
+    {
+       $("a").click(function()
+        {
+         alert("Hello world!");
+        });
+    });                                    
+ </script> 
+ 
 </html>                                                                 
                                                                                                                               
                                                                                                          

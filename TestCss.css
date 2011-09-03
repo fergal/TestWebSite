@@ -1,6 +1,13 @@
-﻿/* Profile Completion Box */
+﻿.vSpace1{ height:1px; clear:both; display:block; line-height:1px; font-size:0;}
+.formBxRow{ margin:0 0 0 0; padding:0 0 8px 0; clear:both; text-align:left; }
+.info{ clear:both; display:none; margin:0 0 0 140px; padding:3px 0 0 20px; color:#039de7; background:url(../Img/iInfo14.gif) no-repeat 0 3px; }
+.msg{ width:255px; margin:0 5px 0 5px; }
+
+/* Profile Completion Box */
 .profileCompletionBx{ margin:0 0 10px 0; padding:10px; background:#fff; border:1px solid #000;}
 .profileCompletionBxTop{}
 .progressBarWrapper{ height:20px; width:33%; border:3px solid #000; }
 .progressBarInner{ height:100%; background:#76EE00; }
 .profileCompletionBxTips{ padding:10px; background:#fff; } 
+
+ h2{ color:#0ff; }
