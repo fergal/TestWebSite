@@ -36,10 +36,14 @@
  <script type="text/javascript">  
     $(document).ready(function() 
     {
+        $("txtCompanyDirectors").autoGrow();
+        $("#txtCompanyDirectors").numeric();
+//        $("#ctl00_cphContent_ucProfile_txtCompanyDirectors").autoGrow();
+//        $('#ctl00_cphContent_ucProfile_txtPhoneArea').numeric();
        $("a").click(function()
         {
          alert("Hello world!");
-        });
+        });    
     });                                    
  </script> 
  
