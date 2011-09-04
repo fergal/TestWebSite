@@ -31,6 +31,13 @@
                 <div class="info">The directors of the company please</div>
                 <div class="vSpace1">&nbsp;</div>
             </div>  
+            <div class="formBxRow">
+                <asp:Label ID="lblYearEstablished" runat="server" AssociatedControlID="txtYearEstablished" Text="Year Established" />
+                <asp:TextBox ID="txtYearEstablished" runat="server" MaxLength="200" />
+                <div class="msg"></div>
+                <div class="info">Year Established</div>
+                <div class="vSpace1">&nbsp;</div>
+            </div> 
             <div id="pdissapear"><p>If you click on me, I will disappear.</p></div>         
             <div id="showtext"><p id="loadtext">Click here for more JQuery information (loaded from a file)!</p></div>
             <div class="panel">
@@ -39,7 +46,7 @@
                 <p>and yet another!!.</p>
             </div>
                     <p class="flip">Show/Hide Panel</p>
-                    <img src="images/manu.jpg" id="imgswap"/>
+                    <img src="images/manu.jpg" id="imgswap" />
         </div>
     </form>
 </body>
@@ -56,6 +63,14 @@
 //        $("p#demo") selects all <p> elements with id="demo".  
 
         //works
+      $("input").focus(function() { 
+	  $(this).parent().addClass("curFocus")         
+      });         
+	  $("input").blur(function() {  
+	  $(this).parent().removeClass("curFocus") 
+      });
+      
+      
       $("a").click(function(){
       $(this).fadeOut();
       });
