@@ -32,7 +32,13 @@
                 <div class="vSpace1">&nbsp;</div>
             </div>  
             <div id="pdissapear"><p>If you click on me, I will disappear.</p></div>         
-            <div><p>If you click on me, I will NOT disappear.</p></div>
+            <div id="showtext"><p id="loadtext">Click here for more JQuery information (loaded from a file)!</p></div>
+            <div class="panel">
+                <p>This is a paragragh inside a panel.</p>
+                <p>This is another paragragh to show the slide transition.</p>
+                <p>and yet another!!.</p>
+            </div>
+                    <p class="flip">Show/Hide Panel</p>
         </div>
     </form>
 </body>
@@ -53,9 +59,17 @@
       $(this).fadeOut();
       });
       
-        $("p").click(function(){
-        $("p").css("background-color","yellow");
-        });
+      $("p#loadtext").click(function(){
+      $("div#showtext").css("background-color","yellow");
+      });
+        
+      $("p#loadtext").click(function(){
+      $("div#showtext").load('test1.txt');
+      });
+      
+      $(".flip").click(function(){
+      $(".panel").slideToggle("slow");
+      });
       
         
     });                                    
