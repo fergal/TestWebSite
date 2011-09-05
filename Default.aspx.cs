@@ -18,7 +18,7 @@ public partial class _Default : System.Web.UI.Page
     }
     private void LoadProfileStats()
     {
-
+       // invisible.Visible = false;
         int complete = 27;
         divPerCentComplete.Text = complete + "% profile completeness";
         divProgressBarInner.Style.Add("width", complete.ToString() + "%");

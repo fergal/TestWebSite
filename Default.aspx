@@ -31,7 +31,7 @@
                 <div class="info">The directors of the company please</div>
                 <div class="vSpace1">&nbsp;</div>
             </div>  
-            <div class="formBxRow">
+            <div class="formBxRow" id="invisible" runat="server">
                 <asp:Label ID="lblYearEstablished" runat="server" AssociatedControlID="txtYearEstablished" Text="Year Established" />
                 <asp:TextBox ID="txtYearEstablished" runat="server" MaxLength="200" />
                 <div class="msg"></div>
