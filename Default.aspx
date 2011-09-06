@@ -40,6 +40,7 @@
             </div> 
             <div id="pdissapear"><p>If you click on me, I will disappear.</p></div>         
             <div id="showtext"><p id="loadtext">Click here for more JQuery information (loaded from a file)!</p></div>
+            
             <div class="panel">
                 <p>This is a paragragh inside a panel.</p>
                 <p>This is another paragragh to show the slide transition.</p>
@@ -47,6 +48,8 @@
             </div>
                     <p class="flip">Show/Hide Panel</p>
                     <img src="images/manu.jpg" id="imgswap" />
+                    
+            <asp:LinkButton id="LinkButton1" Text="Click me" Command="Command" CommandArgument="CommandArgument" CausesValidation="false" OnClick="OnClickMethod" PostBackUrl="~/SessionVariable.aspx" runat="server"/>
         </div>
     </form>
 </body>

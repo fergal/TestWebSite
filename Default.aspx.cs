@@ -22,6 +22,7 @@ public partial class _Default : System.Web.UI.Page
         int complete = 27;
         divPerCentComplete.Text = complete + "% profile completeness";
         divProgressBarInner.Style.Add("width", complete.ToString() + "%");
+        Session["PerCent"] = divPerCentComplete.Text;
         string text = "<br>";
 
         for (int i = 0; i < 5; i++)
@@ -29,6 +30,8 @@ public partial class _Default : System.Web.UI.Page
             text += @"<li><a href=http://www.google.com/> " + i + "</a> (+" + i + "%" + ")</li>";
         }
         fullList.Text = text;
-
-    } 
+    }
+    protected void OnClickMethod(Object sender, EventArgs e)
+    {
+    }
 }
