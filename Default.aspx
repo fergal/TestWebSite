@@ -50,6 +50,7 @@
                     <img src="images/manu.jpg" id="imgswap" />
                     
             <asp:LinkButton id="LinkButton1" Text="Click me" Command="Command" CommandArgument="CommandArgument" CausesValidation="false" OnClick="OnClickMethod" PostBackUrl="~/SessionVariable.aspx" runat="server"/>
+            <asp:LinkButton id="LinkButton2" Text="Click me qs" Command="Command" CommandArgument="CommandArgument" CausesValidation="false" OnClick="OnClickMethod2"  runat="server"/>
         </div>
     </form>
 </body>

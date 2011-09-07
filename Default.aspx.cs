@@ -34,4 +34,9 @@ public partial class _Default : System.Web.UI.Page
     protected void OnClickMethod(Object sender, EventArgs e)
     {
     }
+    protected void OnClickMethod2(Object sender, EventArgs e)
+    {
+        //<a href="products.asp?Products=Books">Books </a>
+        Response.Redirect("SessionVariable.aspx?Percent=" + divPerCentComplete.Text);
+    }
 }

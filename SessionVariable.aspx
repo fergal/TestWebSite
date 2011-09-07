@@ -19,6 +19,7 @@
             <div class="vSpace1">&nbsp;</div>
         </div>  
     </div>
+    <div><asp:LinkButton id="LinkButton1" Text="Click me" Command="Command" CommandArgument="CommandArgument" CausesValidation="false" PostBackUrl="~/Default.aspx" runat="server"/></div>
     </form>
 </body>
  <script type="text/javascript">  

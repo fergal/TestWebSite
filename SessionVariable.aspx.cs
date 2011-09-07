@@ -15,7 +15,11 @@ public partial class SessionVariable : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string text = (string)Session["PerCent"].ToString();
-        txtSessionVar.Text = text;
+        //one way to pass a var
+        //string text = (string)Session["PerCent"].ToString();
+        //txtSessionVar.Text = text;
+
+        //another way
+        txtSessionVar.Text = (string)Request.QueryString["Percent"];
     }
 }
