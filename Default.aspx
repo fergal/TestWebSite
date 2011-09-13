@@ -5,12 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <link rel="stylesheet" type="text/css" href="TestCss.css" />
- <script type="text/javascript" src="jquery.js"></script>
     <title>Test Page</title>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
+    <form id="formBx" runat="server">
+    <div class="formBx">
         <div class="profileCompletionBx">
             <div class="profileCompletionBxTop">
                 <div class="progressBarWrapper">
@@ -49,12 +48,100 @@
                     <p class="flip">Show/Hide Panel</p>
                     <img src="images/manu.jpg" id="imgswap" />
                     
-            <asp:LinkButton id="LinkButton1" Text="Click me" Command="Command" CommandArgument="CommandArgument" CausesValidation="false" OnClick="OnClickMethod" PostBackUrl="~/SessionVariable.aspx" runat="server"/>
-            <asp:LinkButton id="LinkButton2" Text="Click me qs" Command="Command" CommandArgument="CommandArgument" CausesValidation="false" OnClick="OnClickMethod2"  runat="server"/>
+            <asp:LinkButton id="LinkButton1" Text="Click me" Command="Command" CommandArgument="CommandArgument" CausesValidation="false" OnClientClick="return validateForm()" PostBackUrl="~/SessionVariable.aspx" runat="server"/>
+            <asp:LinkButton id="LinkButton2" Text="Click me qs" Command="Command" CommandArgument="CommandArgument" CausesValidation="false" OOnClientClick="return validateForm()"  runat="server"/>
         </div>
     </form>
 </body>
  
+ 
+ 
+ 
+ <%--<script type="text/javascript" src="jquery.alphanumeric.pack.js"></script>
+<script type="text/javascript">--%>
+<script src="jquery-1.2.6.js" type="text/javascript">
+    $(document).ready(function() {
+        
+        
+        
+        //Global & Default Settings
+        $('#txtCompanyDirectors').autoGrow();
+        $('#txtYearEstablished').numeric();
+
+
+
+        // display info panels and highlight selected element
+        $(".formBx input[type=text],input[type=file],input[type=password],textarea,select").focus(function() {
+            if ($(this).parent().find(".msg").html() == "") {
+                $(this).parent().find(".info").css("display", "block");
+            }
+            else if ($(this).parent().parent().hasClass("phoneBx")) {
+                if ($(this).parent().parent().parent().find(".msg").html() == "") {
+                    $(this).parent().parent().parent().find(".info").css("display", "block");
+                }
+            }
+            $(this).addClass("selectedElement");
+        }).blur(function() {
+            $(this).parent().find(".info").css("display", "none");
+            $(this).parent().parent().parent().find(".info").css("display", "none");
+            $(this).removeClass("selectedElement");
+        });
+
+        // validate signup form on keyup and submit
+        //Custom Validation Method
+        jQuery.validator.addMethod(
+            "selectNone",
+            function(value, element) {
+                if (element.value == "-1") {
+                    return false;
+                }
+                else return true;
+            },
+            "Please select an option."
+        );
+
+        //Form Validation Rules
+        var validator = $("#aspnetForm").validate({
+            rules: {
+                txtCompanyDirectors: {
+                    required: true,
+                    maxlength: 250
+                },
+                txtYearEstablished: {
+                    maxlength: 2000
+                }
+
+            },
+            messages: {
+                txtCompanyDirectors$: "Please enter the directors",
+                txtYearEstablished$: "Relevant parent ID"
+            },
+            // the errorPlacement has to take the table layout into account
+            errorPlacement: function(error, element) {
+                if (element.is(":radio"))
+                    error.appendTo(element.parent().next().next());
+                else if (element.is(":checkbox"))
+                    error.appendTo(element.next());
+                else if (element.parent().parent().hasClass("phoneBx"))
+                    error.appendTo(element.parent().parent().parent().find(".msg"));
+                else
+                    error.appendTo(element.parent().find(".msg"));
+            }
+        });
+    });
+
+    function validateForm() {
+        if ($("#aspnetForm").valid())
+            return true;
+        else
+            return false;
+    }
+</script>
+ 
+ 
+ 
+ 
+<%--  <script type="text/javascript" src="jquery.js"></script>
  <script type="text/javascript">  
     $(document).ready(function() 
     {
@@ -116,7 +203,7 @@
 
         
     });                                    
- </script> 
+ </script> --%>
  
 </html>                                                                 
                                                                                                                               
