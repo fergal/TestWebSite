@@ -19,13 +19,13 @@
             </div>
                 <div class="profileCompletionBxTips">
                 <h2>Profile Completion Tips <span>(<a href="">Why do this?</a>)</span></h2>
-                <ul <asp:Literal runat="server" ID="fullList"/></ul>
+                <ul> <asp:Literal runat="server" ID="fullList"/></ul>
                 </div>
             </div>
             
             <div class="formBxRow">
                 <asp:Label ID="lblCompanyDirectors" runat="server" AssociatedControlID="txtCompanyDirectors" Text="Company Directors" />
-                <asp:TextBox ID="txtCompanyDirectors" runat="server" MaxLength="200" />
+                <asp:TextBox ID="txtCompanyDirectors" runat="server" MaxLength="200" TextMode="MultiLine" />
                 <div class="msg"></div>
                 <div class="info">The directors of the company please</div>
                 <div class="vSpace1">&nbsp;</div>
@@ -46,7 +46,7 @@
                 <p>and yet another!!.</p>
             </div>
                     <p class="flip">Show/Hide Panel</p>
-                    <img src="images/manu.jpg" id="imgswap" />
+                    <img src="images/manu.jpg" id="imgswap" alt="hello"/>
                     
             <asp:LinkButton id="LinkButton1" Text="Click me" Command="Command" CommandArgument="CommandArgument" CausesValidation="false" OnClientClick="return validateForm()" PostBackUrl="~/SessionVariable.aspx" runat="server"/>
             <asp:LinkButton id="LinkButton2" Text="Click me qs" Command="Command" CommandArgument="CommandArgument" CausesValidation="false" OOnClientClick="return validateForm()"  runat="server"/>
@@ -54,21 +54,37 @@
     </form>
 </body>
  
+<%-- <script type="text/javascript">
+  $(document).ready(function(){
+    $("#txtInput").autoGrow();
+  });
+</script>
+<textarea id="txtInput" cols="40" rows="5"></textarea>--%>
+	    <script src="jquery-1.2.6.js" type="text/javascript"></script>	 	   
+	     <script type="text/javascript" language="javascript">
+	         $(document).ready(function() {
+	             $('txtCompanyDirectors').fadeOut();
+	         })        
+	     </script>
+
+<%-- <script type="text/javascript" src="jquery.autogrowtextarea.js">
+    $(document).ready(function() 
+    {
+         $('#txtCompanyDirectors').autoGrow(); 
+    }); 
+</script>--%>
+
  
- 
- 
- <%--<script type="text/javascript" src="jquery.alphanumeric.pack.js"></script>
+ <%--
+ <script type="text/javascript" src="jquery.alphanumeric.pack.js"></script>
 <script type="text/javascript">--%>
-<script src="jquery-1.2.6.js" type="text/javascript">
+<%--<script src="jquery-1.2.6.js" type="text/javascript">
+
+
     $(document).ready(function() {
-        
-        
-        
         //Global & Default Settings
         $('#txtCompanyDirectors').autoGrow();
         $('#txtYearEstablished').numeric();
-
-
 
         // display info panels and highlight selected element
         $(".formBx input[type=text],input[type=file],input[type=password],textarea,select").focus(function() {
@@ -81,7 +97,9 @@
                 }
             }
             $(this).addClass("selectedElement");
-        }).blur(function() {
+        })
+        
+        .blur(function() {
             $(this).parent().find(".info").css("display", "none");
             $(this).parent().parent().parent().find(".info").css("display", "none");
             $(this).removeClass("selectedElement");
@@ -136,7 +154,7 @@
         else
             return false;
     }
-</script>
+</script>--%>
  
  
  
@@ -188,7 +206,7 @@
         });
         
          
-      $("#txtCompanyDirectors").keydown(function(event) {
+      $("#txtYearEstablished").keydown(function(event) {
         // Allow only backspace and delete
       if ( event.keyCode == 46 || event.keyCode == 8 ) {
             // let it happen, don't do anything
