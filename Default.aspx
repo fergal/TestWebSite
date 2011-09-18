@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
- 
+<%-- <script src="jquery.autogrowtextarea.js" type="text/javascript"></script>--%>	
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -25,7 +25,7 @@
             
             <div class="formBxRow">
                 <asp:Label ID="lblCompanyDirectors" runat="server" AssociatedControlID="txtCompanyDirectors" Text="Company Directors" />
-                <asp:TextBox ID="txtCompanyDirectors" runat="server" MaxLength="200" TextMode="MultiLine" />
+                <asp:TextBox ID="txtCompanyDirectors" runat="server" TextMode="MultiLine" />
                 <div class="msg"></div>
                 <div class="info">The directors of the company please</div>
                 <div class="vSpace1">&nbsp;</div>
@@ -60,10 +60,11 @@
   });
 </script>
 <textarea id="txtInput" cols="40" rows="5"></textarea>--%>
-	    <script src="jquery-1.2.6.js" type="text/javascript"></script>	 	   
-	     <script type="text/javascript" language="javascript">
-	         $(document).ready(function() {
-	             $('txtCompanyDirectors').fadeOut();
+        <script type="text/javascript" src="jquery-1.2.6.js"></script>
+        <script type="text/javascript" src="jquery.autogrowtextarea.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+	         $('#txtCompanyDirectors').autoGrow();
 	         })        
 	     </script>
 
