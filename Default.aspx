@@ -54,38 +54,41 @@
     </form>
 </body>
  
-<%-- <script type="text/javascript">
-  $(document).ready(function(){
-    $("#txtInput").autoGrow();
-  });
-</script>
-<textarea id="txtInput" cols="40" rows="5"></textarea>--%>
-        <script type="text/javascript" src="jquery-1.2.6.js"></script>
+    <script type="text/javascript" src="jquery-1.2.6.js"></script>
         <script type="text/javascript" src="jquery.autogrowtextarea.js"></script>
+        <script type="text/javascript" src="jquery.alphanumeric.pack.js"></script>
+        <script type="text/javascript" src="jquery.validate.js"></script>   
         <script type="text/javascript">
             $(document).ready(function() {
-	         $('#txtCompanyDirectors').autoGrow();
-	         })        
-	     </script>
+            
+            $('#txtCompanyDirectors').autoGrow();
+            $('#txtYearEstablished').numeric();
 
-<%-- <script type="text/javascript" src="jquery.autogrowtextarea.js">
-    $(document).ready(function() 
-    {
-         $('#txtCompanyDirectors').autoGrow(); 
-    }); 
-</script>--%>
+            var validator = $("#aspnetForm").validate({
+                rules: {
+                    $txtCompanyDirectors: {
+                        required: true,
+                        maxlength: 100
+                    }
+                },
+                messages: {
+                    $txtCompanyDirectors: "Please enter the Company Directors"
+                },
+                // the errorPlacement has to take the table layout into account
+                errorPlacement: function(error, element) {
+                        error.appendTo(element.parent().find(".msg"));
+                }
+            });
+            
+            
 
- 
- <%--
- <script type="text/javascript" src="jquery.alphanumeric.pack.js"></script>
-<script type="text/javascript">--%>
-<%--<script src="jquery-1.2.6.js" type="text/javascript">
+	     function validateForm() {
+	         if ($("#aspnetForm").valid())
+	             return true;
+	         else
+	             return false;
+	     }
 
-
-    $(document).ready(function() {
-        //Global & Default Settings
-        $('#txtCompanyDirectors').autoGrow();
-        $('#txtYearEstablished').numeric();
 
         // display info panels and highlight selected element
         $(".formBx input[type=text],input[type=file],input[type=password],textarea,select").focus(function() {
@@ -119,58 +122,11 @@
             "Please select an option."
         );
 
-        //Form Validation Rules
-        var validator = $("#aspnetForm").validate({
-            rules: {
-                txtCompanyDirectors: {
-                    required: true,
-                    maxlength: 250
-                },
-                txtYearEstablished: {
-                    maxlength: 2000
-                }
 
-            },
-            messages: {
-                txtCompanyDirectors$: "Please enter the directors",
-                txtYearEstablished$: "Relevant parent ID"
-            },
-            // the errorPlacement has to take the table layout into account
-            errorPlacement: function(error, element) {
-                if (element.is(":radio"))
-                    error.appendTo(element.parent().next().next());
-                else if (element.is(":checkbox"))
-                    error.appendTo(element.next());
-                else if (element.parent().parent().hasClass("phoneBx"))
-                    error.appendTo(element.parent().parent().parent().find(".msg"));
-                else
-                    error.appendTo(element.parent().find(".msg"));
-            }
-        });
-    });
-
-    function validateForm() {
-        if ($("#aspnetForm").valid())
-            return true;
-        else
-            return false;
-    }
-</script>--%>
- 
- 
- 
- 
-<%--  <script type="text/javascript" src="jquery.js"></script>
- <script type="text/javascript">  
-    $(document).ready(function() 
-    {
       $("#pdissapear").click(function(){
       $(this).hide();
       });
       
-//        $("p") selects all <p> elements.
-//        $("p.intro") selects all <p> elements with class="intro".
-//        $("p#demo") selects all <p> elements with id="demo".  
 
         //works
       $("input").focus(function() { 
@@ -206,23 +162,9 @@
             });
         });
         
-         
-      $("#txtYearEstablished").keydown(function(event) {
-        // Allow only backspace and delete
-      if ( event.keyCode == 46 || event.keyCode == 8 ) {
-            // let it happen, don't do anything
-        }
-      else {
-            // Ensure that it is a number and stop the keypress
-          if (event.keyCode < 48 || event.keyCode > 57 ) {
-                event.preventDefault(); 
-           }   
-        }
-    });
-
         
     });                                    
- </script> --%>
+ </script> 
  
 </html>                                                                 
                                                                                                                               
