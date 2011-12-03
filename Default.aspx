@@ -7,7 +7,7 @@
 <body>
 <form id="formBx" runat="server">
 <div class="formBx">
-	<h2 class="FormHeader">Update your profile details below</h2>
+	<h2 class="FormHeader">Update your profile details belowamended</h2>
 	<div class="profileCompletionBx">
 		<div class="profileCompletionBxTop">
 			<div class="progressBarWrapper">
