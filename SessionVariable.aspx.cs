@@ -22,4 +22,9 @@ public partial class SessionVariable : System.Web.UI.Page
         //another way
         txtSessionVar.Text = (string)Request.QueryString["Percent"];
     }
+    protected void GetRadioVar(object sender, EventArgs e)
+    {
+        string name = Request.Form["group1"];
+    }
+
 }

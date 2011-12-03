@@ -11,6 +11,12 @@
 <body>
     <form id="form1" runat="server">
     <div>
+     <input type="radio" name="group1" value="Milk"> Milk<br>
+     <input type="radio" name="group1" value="Butter" checked> Butter<br>
+     <input type="radio" name="group1" value="Cheese"> Cheese
+    </div>
+     <div><asp:LinkButton id="LinkButton2" Text="Get Radio var" onclick="GetRadioVar" runat="server"/></div>
+    <div>
         <div class="curDiv">
             <asp:Label ID="lblSessionVar" runat="server" AssociatedControlID="txtSessionVar" Text="Session Variable" />
             <asp:TextBox ID="txtSessionVar" runat="server" MaxLength="200" />

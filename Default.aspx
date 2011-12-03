@@ -49,6 +49,9 @@
 		<asp:LinkButton id="lbtnEdit" Text="Save Changes" runat="server" CausesValidation="false"  OnClientClick="return validateForm()" ></asp:LinkButton>
 		<asp:LinkButton id="LinkButton1" Text="Click me" Command="Command" CommandArgument="CommandArgument" CausesValidation="true" OnClientClick="return validateForm()" PostBackUrl="~/SessionVariable.aspx" runat="server"/>
 		<asp:LinkButton id="LinkButton2" Text="Click me qs" CausesValidation="false" OnClientClick="return validateForm()" runat="server"/>
+		
+		
+		
 	</div>
  </div>
 </form>
@@ -130,14 +133,14 @@
                   this.src = 'images/manu.jpg';
               });
           });
-
+          function validateForm() {
+              if ($("#aspnetForm").valid())
+                  return true;
+              else
+                  return false;
+          }	
       });
-      function validateForm() {
-          if ($("#aspnetForm").valid())
-              return true;
-          else
-              return false;
-      }	
+
  </script> 
  </html>                                                                 
                                                                                                                               

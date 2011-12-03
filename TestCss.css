@@ -2,6 +2,7 @@
 .formBxRow{ margin:0 0 0 0; padding:0 0 8px 0; clear:both; text-align:left; }
 .info{ clear:both; display:none; margin:0 0 0 140px; padding:3px 0 0 20px; color:#039de7; background:url(../Img/iInfo14.gif) no-repeat 0 3px; }
 .msg{ width:255px; margin:0 5px 0 5px; }
+#msg{ width:255px; margin:0 5px 0 5px; }
 
 /* Profile Completion Box */
 .profileCompletionBx{ margin:0 0 10px 0; padding:10px; background:#fff; border:1px solid #000;}
@@ -18,6 +19,7 @@ div.panel,p.flip {margin: 0px;padding: 5px; text-align :center; background: #e5e
 div.panel{ height: 120px; display: none;}
 img { width: 160px; height: 160px;} 
 div.curFocus { background: #fdecb2; }
+.curFocus { background: #fdecb2; }
 body{text-align:center; font-size:0.75em; font-family:Arial, Sans-Serif;}
 a{ color:#0177b5; }
 a:hover{ text-decoration:none; }
