@@ -18,25 +18,5 @@ public partial class _Default : System.Web.UI.Page
     }
     private void LoadProfileStats()
     {
-       // invisible.Visible = false;
-        int complete = 27;
-        divPerCentComplete.Text = complete + "% profile completeness";
-        divProgressBarInner.Style.Add("width", complete.ToString() + "%");
-        Session["PerCent"] = divPerCentComplete.Text;
-        string text = "<br>";
-
-        for (int i = 0; i < 5; i++)
-        {
-            text += @"<li><a href=http://www.google.com/> " + i + "</a> (+" + i + "%" + ")</li>";
-        }
-        fullList.Text = text;
-    }
-    protected void OnClickMethod(Object sender, EventArgs e)
-    {
-    }
-    protected void OnClickMethod2(Object sender, EventArgs e)
-    {
-        //<a href="products.asp?Products=Books">Books </a>
-        Response.Redirect("SessionVariable.aspx?Percent=" + divPerCentComplete.Text);
     }
 }
