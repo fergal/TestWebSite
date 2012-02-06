@@ -7,7 +7,7 @@
 <body>
 <form id="formBx" runat="server">
 <div class="formBx">
-	<h2 class="FormHeader">Update your profile details belowamended</h2>
+	<h2 class="FormHeader">Update your profile details below amended</h2>
 	<div class="profileCompletionBx">
 		<div class="profileCompletionBxTop">
 			<div class="progressBarWrapper">
@@ -121,6 +121,9 @@
           });
           $("p#loadtext").click(function() {
               $("div#showtext").load('test1.txt');
+          });
+          $("div#showtext").dblclick(function() {
+          $(this).fadeOut();
           });
           $(".flip").click(function() {
               $(".panel").slideToggle("slow");
